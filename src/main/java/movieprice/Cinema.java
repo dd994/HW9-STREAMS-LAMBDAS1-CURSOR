@@ -15,6 +15,7 @@ public class Cinema {
         firstMovieList.add(new Film("She", 55, Genre.THRILLER));
         firstMovieList.add(new Film("Avatar", 90, Genre.ACTION));
         firstMovieList.add(new Film("Hobbit", 50, Genre.STORY));
+        firstMovieList.add(new Film("Home Alone", 50, Genre.FAMILY));
 
         return firstMovieList;
     }
@@ -26,6 +27,7 @@ public class Cinema {
         secondMovieList.add(new Film("Stupid", 55, Genre.COMEDY));
         secondMovieList.add(new Film("Terminator2", 59, Genre.ACTION));
         secondMovieList.add(new Film("Terminator3", 68, Genre.ACTION));
+        secondMovieList.add(new Film("Dunkerk", 68, Genre.HISTORICAL));
 
         return secondMovieList;
     }
@@ -39,9 +41,19 @@ public class Cinema {
                 .filter(movie -> movie.getGenre().equals(genre))
                 .collect(Collectors.groupingBy(Film::getGenre, Collectors.averagingDouble(Film::getPrice)));
 
-        System.out.println(averagePrice);
+        System.out.println("The average price(grn) : " + averagePrice);
+
+        List<String> genreList = movies.stream()
+                .filter(movie -> movie.getGenre().equals(genre))
+                .map(Film::getName)
+                .collect(Collectors.toList());
+
+        System.out.println("Movies are available: " + genreList);
     }
 
+//    static void genreList(){
+//        .filter(movie -> movie.getGenre().equals(genre))
+//    };
 
 }
 

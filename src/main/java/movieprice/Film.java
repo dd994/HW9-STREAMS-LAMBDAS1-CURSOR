@@ -20,7 +20,7 @@ public class Film {
     }
 
     public double getPrice() {
-        return (double) price ;
+        return price ;
     }
 
     public void setPrice(double price) {

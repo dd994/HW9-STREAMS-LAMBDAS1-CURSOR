@@ -4,7 +4,7 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
-public class UserCreater {
+class UserCreater {
 
     static List<User> createUsers() {
         List<User> users = new ArrayList<>();

@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-public class Cinema {
+class Cinema {
 
     private static List<Film> getFirstMovies() {
 
@@ -48,7 +48,7 @@ public class Cinema {
                 .map(Film::getName)
                 .collect(Collectors.toList());
 
-        System.out.println("Movies are available: " + genreList);
+        System.out.println("Number of films of this genre: "+genreList.size()+". Movies are available: " + genreList);
     }
 
 

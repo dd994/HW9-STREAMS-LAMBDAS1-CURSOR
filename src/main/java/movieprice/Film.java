@@ -23,16 +23,8 @@ public class Film {
         return price ;
     }
 
-    public void setPrice(double price) {
-        this.price = price;
-    }
-
     public Genre getGenre() {
         return genre;
-    }
-
-    public void setGenre(Genre genre) {
-        this.genre = genre;
     }
 
     @Override

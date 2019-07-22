@@ -51,9 +51,6 @@ public class Cinema {
         System.out.println("Movies are available: " + genreList);
     }
 
-//    static void genreList(){
-//        .filter(movie -> movie.getGenre().equals(genre))
-//    };
 
 }
 

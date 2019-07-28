@@ -1,6 +1,5 @@
 package main.java.thingsbox;
 
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -15,7 +14,7 @@ public class Box {
         box.add(box2);
 
         box2.add(new Thing("headphones"));
-        box2.add(new Protected("vase oneі"));
+        box2.add(new Protected("vase one"));
         box2.add(new Protected("plate"));
         box2.add(new Thing("socks"));
         box2.add(new Protected("cup"));
@@ -31,18 +30,16 @@ public class Box {
         box1.add(new Thing("bag"));
         box1.add(new Protected("binoculars"));
         box1.add(new Protected("bottle"));
-
     }
 
-
-    void getProtectedThings() {
+    void protectedThings() {
         List<String> protectedThings1 = box1.stream()
-                .filter(boxs -> boxs.weak())
+                .filter(Thing::weak)
                 .map(Thing::getName)
                 .collect(Collectors.toList());
 
         List<String> protectedThings2 = box2.stream()
-                .filter(boxs -> boxs.weak())
+                .filter(Thing::weak)
                 .map(Thing::getName)
                 .collect(Collectors.toList());
 

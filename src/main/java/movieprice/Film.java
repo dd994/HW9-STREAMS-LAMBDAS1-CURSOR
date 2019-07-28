@@ -3,7 +3,7 @@ package main.java.movieprice;
 public class Film {
     private String name;
     private double price;
-    private   Genre genre;
+    private Genre genre;
 
     Film(String name, double price, Genre genre) {
         this.name = name;
@@ -14,7 +14,6 @@ public class Film {
     String getName() {
         return name;
     }
-
 
     double getPrice() {
         return price ;

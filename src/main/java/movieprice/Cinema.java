@@ -8,7 +8,6 @@ import java.util.stream.Collectors;
 class Cinema {
 
     private static List<Film> getFirstMovies() {
-
         List<Film> firstMovieList = new ArrayList<>();
         firstMovieList.add(new Film("Terminator", 52, Genre.ACTION));
         firstMovieList.add(new Film("Mask", 80, Genre.COMEDY));
@@ -16,7 +15,6 @@ class Cinema {
         firstMovieList.add(new Film("Avatar", 90, Genre.ACTION));
         firstMovieList.add(new Film("Hobbit", 50, Genre.STORY));
         firstMovieList.add(new Film("Home Alone", 50, Genre.FAMILY));
-
         return firstMovieList;
     }
 
@@ -28,7 +26,6 @@ class Cinema {
         secondMovieList.add(new Film("Terminator2", 59, Genre.ACTION));
         secondMovieList.add(new Film("Terminator3", 68, Genre.ACTION));
         secondMovieList.add(new Film("Dunkerk", 68, Genre.HISTORICAL));
-
         return secondMovieList;
     }
 
@@ -40,17 +37,13 @@ class Cinema {
         Map<Genre, Double> averagePrice = movies.stream()
                 .filter(movie -> movie.getGenre().equals(genre))
                 .collect(Collectors.groupingBy(Film::getGenre, Collectors.averagingDouble(Film::getPrice)));
-
         System.out.println("The average price(grn) : " + averagePrice);
 
         List<String> genreList = movies.stream()
                 .filter(movie -> movie.getGenre().equals(genre))
                 .map(Film::getName)
                 .collect(Collectors.toList());
-
-        System.out.println("Number of films of this genre: "+genreList.size()+". Movies are available: " + genreList);
+        System.out.println("Number of films of this genre: " + genreList.size() + ". Movies are available: " + genreList);
     }
-
-
 }
 
